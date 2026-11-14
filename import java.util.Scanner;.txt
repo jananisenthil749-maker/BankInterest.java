@@ -1,0 +1,40 @@
+import java.util.Scanner;
+abstract class ibank {
+    abstract int getRateOfIntrest();
+}
+
+class SBI extends ibank {
+
+    int getRateOfIntrest() {
+        return 7;
+    }}
+
+    class PNB extends ibank {
+        int getRateOfIntrest() {
+            return 8;
+        }
+    }
+
+    public class ybank {
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+
+            System.out.println("Enter the principal amount");
+            Double principal = sc.nextDouble();
+
+
+            ibank b;
+
+            b = new SBI();
+            System.out.println("Rate of Interest is: " + b.getRateOfIntrest() + "%");
+
+            Double result1 = principal* b.getRateOfIntrest();
+            System.out.println("Principal × Rate = " + result1);
+
+            PNB s = new PNB();
+
+            Double result2 = principal* s.getRateOfIntrest();
+            System.out.println("Rate of Interest is: " + s.getRateOfIntrest() + "%");
+            System.out.println("Principal × Rate = " + result2);
+        }
+    }
